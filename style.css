@@ -1,0 +1,64 @@
+
+
+  
+.amount {
+  position: absolute;
+  bottom: 500px;
+  left: 135px;
+  font-size: 10px;
+  color: #080808;
+  
+  
+}
+.center-image {
+  height: 93%;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  width: 50%;
+}
+.right {
+  position: fixed;
+  width: 490px;
+  height: 850px;
+  right: 200px;
+  background-image: url(img/1.png);
+  background-size: cover;
+/* background-size: contain; */
+  /* position: relative; */
+}
+
+.total {
+  opacity: 80%;
+  font-size: 15px;
+  position: fixed;
+  right: 240px;
+  top: 301px;
+}
+
+
+.right img {
+  width: 50%;
+}
+
+.date {
+  opacity: 65%;
+  position: absolute;
+  top: 365px;
+  right:95px;
+  font-size: 17px;
+  color: #080808;
+  font-weight: bold;
+}
+
+button{
+  background-color: rgb(28, 140, 0);
+  color: aliceblue;
+  cursor: pointer;
+}

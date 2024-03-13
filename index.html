@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recipe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="form">
+          <input type="date" placeholder="date" id="date" />
+          <input type="text" placeholder="time" id="time" />
+          <button id="submit" type="submit" >Submit</button>
+        </div><br><br><br>
+        <div class="form">
+          <input type="number" placeholder="Subtotal" id="subtotal" /><br>
+          <input type="text" placeholder="8% Tax" id="tax" disabled /><br>
+          <input type="text" placeholder="Total" id="total" disabled /><br>
+          <input type="text" placeholder="Copy of Total" id="copyTotal" disabled /><br><br>
+          <button id="calculate" type="button">Calculate</button>
+        </div>
+      </div>
+
+
+      
+      <div class="right">
+        <!-- <img src="img/1.png" class="center-image" alt="Centered Image" /> -->
+        <div class="date">
+          <span id="dateIn">12/11/2023</span> <span id="timeIn">4:20PM</span>
+        </div>
+        <div class="total">
+          <span id="subtotalin">0</span><br>
+        <span id="taxin">0</span><br>
+        <span id="totalin">0</span><br>
+        <span id="copyTotalin">0</span><br>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("submit").addEventListener("click", function () {
+        const date = document.getElementById("date").value;
+        const time = document.getElementById("time").value;
+
+        document.getElementById("dateIn").innerText = date;
+        document.getElementById("timeIn").innerText = time;
+      });
+      document.getElementById("calculate").addEventListener("click", function () {
+     const subtotal = parseFloat(document.getElementById("subtotal").value) || 0;
+
+     // Calculate 8% Tax
+     const tax = subtotal * 0.08;
+
+     // Calculate Total
+     const total = subtotal + tax;
+
+     // Copy Total to the fourth field
+     const copyTotal = total;
+
+     // Display results in the input fields
+     document.getElementById("tax").value = tax.toFixed(2);
+     document.getElementById("total").value = total.toFixed(2);
+     document.getElementById("copyTotal").value = copyTotal.toFixed(2);
+
+     // Display results in the right panel
+     document.getElementById("subtotalin").innerText = subtotal.toFixed(2);
+     document.getElementById("taxin").innerText = tax.toFixed(2);
+     document.getElementById("totalin").innerText = total.toFixed(2);
+     document.getElementById("copyTotalin").innerText = copyTotal.toFixed(2);
+});
+      </script>
+  </body>
+</html>
